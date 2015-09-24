@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	img {
+	    width:100%;
+	}
+	</style>
+</head>
+<body>
+	<p>It is better to use the style attribute (instead of the width and height attributes), because it prevents 
+	internal or external styles sheets to change the default size of an image:</p>
+	<p>alt attribute is for Screen readers(視障)</p>
+	<img src="img/image.jpg" alt="HTML5 Icon" style="width:128px;height:128px">
+	<img src="img/image.jpg" alt="HTML5 Icon" width="128" height="128">
+	<br>
+
+	<p>Image Maps</p>
+	<img src="img/planets.gif" alt="Planets" usemap="#planetmap" style="width:145px;height:126px">
+	<map name="planetmap">
+		<area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.html">
+		<area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.html">
+  		<area shape="circle" coords="124,58,8" alt="Venus" href="venus.html">
+	</map>
+	<br>
+
+	<p>The image floats to the left of the text.</p>
+
+	<p>
+	  <img src="img/image.jpg" alt="Flower" style="float:left;width:42px;height:42px">
+	  A paragraph with an image. A paragraph with an image.
+	  A paragraph with an image. A paragraph with an image.
+	  A paragraph with an image. A paragraph with an image. 
+	  A paragraph with an image. A paragraph with an image.
+	  A paragraph with an image. A paragraph with an image.
+	  A paragraph with an image. A paragraph with an image.    
+	</p>
+</body>
+</html>

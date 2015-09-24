@@ -3,7 +3,9 @@ BensonTsaiProject
 
 This is my project sample
 
-[eat](http://bensontsai0.github.io/)
+[首頁](http://bensontsai0.github.io/)
+
+[eat](http://bensontsai0.github.io/eat/eat.html)
 
 [test](http://bensontsai0.github.io/)
 
