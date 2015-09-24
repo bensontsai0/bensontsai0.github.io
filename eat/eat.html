@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>今天吃什麼</title>
+</head>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/eat_what.js"></script>
+<body>
+	<button class="changeBtn" value="business" onclick="changeChoice(this)">公司附近</button>
+	<button class="changeBtn" value="east" onclick="changeChoice(this)">東區</button>
+	<button class="changeBtn" value="girlfriend" onclick="changeChoice(this)">小葉</button>
+	<br>
+ 
+	alpha:<div id="alpha">0</div><br>
+	beta: <div id="beta">0</div><br>
+	gamma:<div id="gamma">0</div><br>
+
+	<div id="eat">今天吃什麼</div>
+
+	<button class="startBtn" onclick="start()">開始選擇</button>
+</body>
+</html>
