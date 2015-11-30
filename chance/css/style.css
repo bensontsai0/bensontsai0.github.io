@@ -8,8 +8,10 @@ body {
 }
 .lead {
 	padding: 60px 0px;
+	font-size: 20px;
 	font-weight: 600;
 }
 h1 {
+	font-size: 25px;
 	font-weight: 900;
 }
