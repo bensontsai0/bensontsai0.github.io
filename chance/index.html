@@ -27,9 +27,11 @@
 	<button id="no" onclick="cleanChance()">否</button>
 	<br>
 	<button id="start" onclick="getChance()">求籤</button>
-	<button id="add" onclick="getChance()">靠籤</button>
-	<button id="end" onclick="finish()">不需要靠籤</button>
+	<button id="end" onclick="finish()" style="display:none">結束</button>
+
+	<div id="namelist"></div>
 	
+	<div id="answer"></div>
 	<footer id="footer">
 		<!-- include pageFooter.html -->
 	</footer>
@@ -38,6 +40,9 @@
 	var	chanceList = new Array();
 	var	tempList = new Array();
 	var no = 0;
+	function init(){
+
+	}
 	function getChance(){
 		no = Math.floor((Math.random() * 100) + 1);
 		if(tempList.indexOf(no) > 0){
@@ -54,6 +59,7 @@
 			chanceList.push(no);
 		}
 		console.log(chanceList);
+		$('#end').show();
 	}
 
 	function cleanChance(){
@@ -61,7 +67,12 @@
 	}
 
 	function finish(){
-		
+		$('#number').text('');
+		$('#namelist').append('<button onclick="">小剉</button>');
+		for(var i = 0; i < chanceList.length; i++){
+			$('#answer').append(chanceList[i] + "<br>");
+		}
+		$('#end').hide();
 	}
 	</script>
 </body>
