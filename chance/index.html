@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百首靈籤求籤網</title>
+	<!-- 最新編譯和最佳化的 CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+	<!-- 選擇性佈景主題 -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+	<!-- bootstrap.js相依於 jQuery，必須先引用jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- 最新編譯和最佳化的 JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	
+</head>
+<body>
+	<header id="header">
+		<div id="title">百首靈籤求籤網</div>
+		<!-- include pageHeader.html -->
+	</header>
+	<div id="number"></div>
+	<div>號籤</div>
+	<button id="yes" onclick="saveChance()">是</button>
+	<button id="no" onclick="cleanChance()">否</button>
+	<br>
+	<button id="start" onclick="getChance()">求籤</button>
+	<button id="add" onclick="getChance()">靠籤</button>
+	<button id="end" onclick="finish()">不需要靠籤</button>
+	
+	<footer id="footer">
+		<!-- include pageFooter.html -->
+	</footer>
+
+	<script>
+	var	chanceList = new Array();
+	var	tempList = new Array();
+	var no = 0;
+	function getChance(){
+		no = Math.floor((Math.random() * 100) + 1);
+		if(tempList.indexOf(no) > 0){
+			getChance();
+			return;
+		} else {
+			$('#number').text(no);
+			tempList.push(no);
+		}
+	}
+
+	function saveChance(){
+		if(chanceList.indexOf(no) == -1 && no != 0){
+			chanceList.push(no);
+		}
+		console.log(chanceList);
+	}
+
+	function cleanChance(){
+		$('#number').text('');
+	}
+
+	function finish(){
+		
+	}
+	</script>
+</body>
+</html>
