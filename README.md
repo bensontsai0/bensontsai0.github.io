@@ -7,7 +7,7 @@ This is my project sample
 
 [eat](http://bensontsai0.github.io/eat/eat.html)
 
-[求籤](http://bensontsai0.github.io/test/css_demo.html)
+[求籤](http://bensontsai0.github.io/chance/)
 
 [test](http://bensontsai0.github.io/test/css_demo.html)
 
