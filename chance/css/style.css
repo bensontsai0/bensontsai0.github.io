@@ -8,10 +8,16 @@ body {
 }
 .lead {
 	padding: 60px 0px;
-	font-size: 25px;
+	font-size: 25px;					/* 設定文字大小 */
 	font-weight: 600;
+	letter-spacing: 3px;　            　/* 設定文字間距 */
+	line-height: 30px;　　　          　/* 設定文字行距 */
 }
 h1 {
 	font-size: 30px;
 	font-weight: 900;
+}
+
+.navbar-static-top {
+  margin-bottom: 19px;
 }
