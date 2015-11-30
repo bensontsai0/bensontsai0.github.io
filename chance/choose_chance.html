@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>恩主公百首籤詩求籤網</title>
+
+	<script src="js/chancelist.js"></script>
+	<!-- 最新編譯和最佳化的 CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+	<!-- 選擇性佈景主題 -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+	<!-- bootstrap.js相依於 jQuery，必須先引用jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- 最新編譯和最佳化的 JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">恩主公百首籤詩</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">首頁</a></li>
+            <li><a href="choose_chance.html">求籤網</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+	<div id="number"></div>
+	<div>號籤</div>
+	<button id="yes" onclick="saveChance()">是</button>
+	<button id="no" onclick="cleanChance()">否</button>
+	<br>
+	<button id="start" onclick="getChance()">求籤</button>
+	<button id="end" onclick="finish()" style="display:none">結束</button>
+
+	<div id="namelist"></div>
+	
+	<div id="answer"></div>
+	<footer id="footer">
+		<!-- include pageFooter.html -->
+	</footer>
+
+	<script>
+	var	chooseList = new Array();
+	var	tempList = new Array();
+	var no = 0;
+	
+	function init(){
+		for(var i = 0; i < chanceList.length; i++){
+			$('#number').append(chanceList[i] + "<br>");
+		}
+	}
+	function getChance(){
+		no = Math.floor((Math.random() * 100) + 1);
+		if(tempList.indexOf(no) > 0){
+			getChance();
+			return;
+		} else {
+			$('#number').text(no);
+			tempList.push(no);
+		}
+	}
+
+	function saveChance(){
+		if(chooseList.indexOf(no) == -1 && no != 0){
+			chooseList.push(no);
+		}
+		console.log(chooseList);
+		$('#end').show();
+	}
+
+	function cleanChance(){
+		$('#number').text('');
+	}
+
+	function finish(){
+		$('#number').text('');
+		$('#namelist').append('<button onclick="">小剉</button>');
+		for(var i = 0; i < chooseList.length; i++){
+			$('#answer').append(chooseList[i] + "<br>");
+		}
+		$('#end').hide();
+	}
+	init();
+	</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+  font-family: 標楷體;
+}
+.lead {
+	padding: 60px 0px;
+	font-size: 30px;
+	font-weight: 900;
+}
+h1 {
+	font-size: 45px;
+	font-weight: 900;
+}

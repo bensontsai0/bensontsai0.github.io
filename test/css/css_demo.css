@@ -1,0 +1,43 @@
+/*Use id to address single elements. Use class to address groups of elements.*/
+/*for id*/
+div#style1	{
+	color:blue;
+}
+/*for class*/
+div.style1 {
+	color: red;
+}
+
+a:link {
+    color:#000000;
+    background-color:transparent;
+    text-decoration:none;
+}
+a:visited {
+    color:#000000;
+    background-color:transparent;
+    text-decoration:none;
+}
+a:hover {
+    color:#ff0000;
+    background-color:transparent;
+    text-decoration:underline;
+}
+a:active {
+    color:#ff0000;
+    background-color:transparent;
+    text-decoration:underline;
+}
+
+table {
+	width: 100%;
+}
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;	/*改變border格式*/
+}
+
+th, td {
+    padding: 5px;
+}
