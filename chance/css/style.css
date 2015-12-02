@@ -2,13 +2,13 @@ body {
   padding-top: 50px;
 }
 .starter-template {
-  padding: 40px 15px;
+  padding: 40px 5px;
   text-align: center;
   font-family: 標楷體;
 }
 .lead {
-	padding: 60px 50px;
-	font-size: 22px;					/* 設定文字大小 */
+	padding: 60px 0px 30px 0px;			/*padding: [上面留白值] [右邊留白值] [下面留白值] [左邊留白值]*/
+	font-size: 17px;					/* 設定文字大小 */
 	font-weight: 600;
 	letter-spacing: 3px;　            　/* 設定文字間距 */
 	line-height: 30px;　　　          　/* 設定文字行距 */
