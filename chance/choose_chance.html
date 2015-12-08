@@ -2,20 +2,33 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="../../favicon.ico"> -->
+
 	<title>恩主公百首籤詩求籤網</title>
-
 	<script src="js/chancelist.js"></script>
-	<!-- 最新編譯和最佳化的 CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	 <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-	<!-- 選擇性佈景主題 -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../css/assets/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-	<!-- bootstrap.js相依於 jQuery，必須先引用jQuery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
 
-	<!-- 最新編譯和最佳化的 JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../js/assets/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 	
 </head>
 <body>
@@ -32,31 +45,51 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-	<div id="number"></div>
-	<div>號籤</div>
-	<button id="yes" onclick="saveChance()">是</button>
-	<button id="no" onclick="cleanChance()">否</button>
-	<br>
-	<button id="start" onclick="getChance()">求籤</button>
-	<button id="end" onclick="finish()" style="display:none">結束</button>
+    <div class="container">
+	  	<div class="starter-template">
+	  		<p>
+		        <div id="number" class="chance-number"></div>
+				<div class="chance">號籤</div>
+			</p>
+			<p>
+				<button id="yes" type="button" class="btn btn-lg btn-success" onclick="saveChance()" style="display:none">是</button>
+				<button id="no"  type="button" class="btn btn-lg btn-danger" onclick="cleanChance()" style="display:none">否</button>
+			</p>
+			<p>
+				<button id="start" type="button" class="btn btn-lg btn-primary" onclick="getChance()">求籤</button>
+				<button id="end"type="button" class="btn btn-lg btn-warning" onclick="finish()" style="display:none">結束</button>
+			</p>
 
-	<div id="namelist"></div>
+			<div id="namelist"></div>
+			
+			<div id="answer"></div>
+	   	</div>
+	</div>
 	
-	<div id="answer"></div>
 	<footer id="footer">
 		<!-- include pageFooter.html -->
 	</footer>
 
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <!-- <script>window.jQuery || document.write('<script src="../js/jquery-1.11.3.min.js"><\/script>')</script> -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/assets/ie10-viewport-bug-workaround.js"></script>
+
 	<script>
+	//控制nav點擊縮放
+	$("ul.nav.navbar-nav.navbar-right li a").click(function(){
+		$(".navbar-collapse.collapse").removeClass("in");
+	});
+
 	var	chooseList = new Array();
 	var	tempList = new Array();
 	var no = 0;
 	
-	function init(){
-		for(var i = 0; i < chanceList.length; i++){
-			$('#number').append(chanceList[i] + "<br>");
-		}
-	}
 	function getChance(){
 		no = Math.floor((Math.random() * 100) + 1);
 		if(tempList.indexOf(no) > 0){
@@ -65,6 +98,7 @@
 		} else {
 			$('#number').text(no);
 			tempList.push(no);
+			showYesNo();
 		}
 	}
 
@@ -72,23 +106,34 @@
 		if(chooseList.indexOf(no) == -1 && no != 0){
 			chooseList.push(no);
 		}
-		console.log(chooseList);
 		$('#end').show();
+		hideYesNo();
 	}
 
 	function cleanChance(){
 		$('#number').text('');
+		hideYesNo();
 	}
 
 	function finish(){
 		$('#number').text('');
-		$('#namelist').append('<button onclick="">小剉</button>');
+		$('#namelist').append('<h1><span class="label label-default chance">小剉</span></h1>');
 		for(var i = 0; i < chooseList.length; i++){
-			$('#answer').append(chooseList[i] + "<br>");
+			$('#answer').append('<p class="lead" >' + chanceList[chooseList[i]] + '</p>');
 		}
 		$('#end').hide();
+		hideYesNo();
 	}
-	init();
+
+	function showYesNo(){
+		$('#yes').show();
+		$('#no').show();
+	}
+
+	function hideYesNo(){
+		$('#yes').hide();
+		$('#no').hide();
+	}
 	</script>
 </body>
 </html>
