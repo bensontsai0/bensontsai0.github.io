@@ -91,6 +91,7 @@
 	    this.splice(0, this.length);
 	};
 
+	var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
 	var	chooseList = new Array();
 	var	tempList = new Array();
 	var no = 0;
@@ -105,6 +106,7 @@
 			tempList.push(no);
 			showYesNo();
 		}
+		$('#clean').hide();
 	}
 
 	function saveChance(){
@@ -124,11 +126,16 @@
 		$('#number').text('');
 		$('#namelist').append('<h1><span class="label label-default">信徒</span></h1>');
 		for(var i = 0; i < chooseList.length; i++){
-			$('#answer').append('<p class="lead" >' + chanceList[chooseList[i]] + '</p>');
+			$('#answer').append('<p class="lead" >' + chanceList[chooseList[i]-1] + '</p>');
+			console.log(i);
 		}
 		$('#end').hide();
 		$('#clean').show();
 		hideYesNo();
+		//move to namelist
+		$body.animate({
+			scrollTop: $('#namelist').offset().top
+		}, 1000);
 	}
 
 	function showYesNo(){
