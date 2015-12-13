@@ -18,7 +18,7 @@ h1 {
 	font-weight: 900;
 }
 .navbar-static-top {
-  margin-bottom: 19px;
+  	margin-bottom: 19px;
 }
 .chance {
 	padding: 50px 0px 30px 0px;
@@ -34,4 +34,12 @@ h1 {
   	height: 200px;
 	padding: 50px 0px 30px 0px;
 	font-size: 70px;
+}
+.btn-all{
+	width: 100%;
+	font-size: 25px;
+}
+.col-xs-6{
+	padding-right: 0px;
+  	padding-left: 0px;
 }

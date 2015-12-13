@@ -51,13 +51,14 @@
 		        <div id="number" class="chance-number"></div>
 				<div class="chance">號籤</div>
 			</p>
-			<p>
-				<button id="yes" type="button" class="btn btn-lg btn-success" onclick="saveChance()" style="display:none">是</button>
-				<button id="no"  type="button" class="btn btn-lg btn-danger" onclick="cleanChance()" style="display:none">否</button>
-			</p>
+			<div class="row">
+		        <div class="col-xs-6"><button id="yes" type="button" class="btn btn-all btn-success" onclick="saveChance()" style="display:none">是</button></div>
+		        <div class="col-xs-6"><button id="no"  type="button" class="btn btn-all btn-danger" onclick="cleanChance()" style="display:none">否</button></div>
+		    </div>
 			<p>
 				<button id="start" type="button" class="btn btn-lg btn-primary" onclick="getChance()">求籤</button>
 				<button id="end"type="button" class="btn btn-lg btn-warning" onclick="finish()" style="display:none">結束</button>
+				<button id="clean"type="button" class="btn btn-lg btn-danger" onclick="clean()" style="display:none">清空</button>
 			</p>
 
 			<div id="namelist"></div>
@@ -85,6 +86,10 @@
 	$("ul.nav.navbar-nav.navbar-right li a").click(function(){
 		$(".navbar-collapse.collapse").removeClass("in");
 	});
+	//Array.clear() 
+	Array.prototype.clear = function() {
+	    this.splice(0, this.length);
+	};
 
 	var	chooseList = new Array();
 	var	tempList = new Array();
@@ -117,11 +122,12 @@
 
 	function finish(){
 		$('#number').text('');
-		$('#namelist').append('<h1><span class="label label-default chance">小剉</span></h1>');
+		$('#namelist').append('<h1><span class="label label-default">信徒</span></h1>');
 		for(var i = 0; i < chooseList.length; i++){
 			$('#answer').append('<p class="lead" >' + chanceList[chooseList[i]] + '</p>');
 		}
 		$('#end').hide();
+		$('#clean').show();
 		hideYesNo();
 	}
 
@@ -133,6 +139,14 @@
 	function hideYesNo(){
 		$('#yes').hide();
 		$('#no').hide();
+	}
+
+	function clean(){
+		$('#namelist').text('');
+		$('#answer').text('');
+		chooseList.clear();
+		tempList.clear();
+		$('#clean').hide();
 	}
 	</script>
 </body>
