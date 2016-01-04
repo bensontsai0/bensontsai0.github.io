@@ -35,11 +35,17 @@
 	<nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
+        　<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
           <a class="navbar-brand" href="#">恩主公百首籤詩</a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
+        <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">首頁</a></li>
+            <li class="active"><a href="#">首頁</a></li>
             <li><a href="choose_chance.html">求籤網</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -55,11 +61,14 @@
 		        <div class="col-xs-6"><button id="yes" type="button" class="btn btn-all btn-success" onclick="saveChance()" style="display:none">是</button></div>
 		        <div class="col-xs-6"><button id="no"  type="button" class="btn btn-all btn-danger" onclick="cleanChance()" style="display:none">否</button></div>
 		    </div>
-			<p>
-				<button id="start" type="button" class="btn btn-lg btn-primary" onclick="getChance()">求籤</button>
-				<button id="end"type="button" class="btn btn-lg btn-warning" onclick="finish()" style="display:none">結束</button>
-				<button id="clean"type="button" class="btn btn-lg btn-danger" onclick="clean()" style="display:none">清空</button>
-			</p>
+		    <br>
+		    <br>
+			<div class="row">
+				<div class="col-xs-3"></div>
+				<div class="col-xs-3"><button id="start" type="button" class="btn btn-lg btn-primary" onclick="getChance()">求籤</button></div>
+				<div class="col-xs-3"><button id="end"type="button" class="btn btn-lg btn-warning" onclick="finish()" style="display:none">結束</button></div>
+				<div class="col-xs-3"><button id="clean"type="button" class="btn btn-lg btn-danger" onclick="clean()" style="display:none">清空</button></div>
+			</div>
 
 			<div id="namelist"></div>
 			
@@ -82,6 +91,7 @@
     <script src="../js/assets/ie10-viewport-bug-workaround.js"></script>
 
 	<script>
+	var isFinish = false;
 	//控制nav點擊縮放
 	$("ul.nav.navbar-nav.navbar-right li a").click(function(){
 		$(".navbar-collapse.collapse").removeClass("in");
@@ -97,6 +107,11 @@
 	var no = 0;
 	
 	function getChance(){
+
+		if(isFinish){
+			clean();
+		}
+
 		no = Math.floor((Math.random() * 100) + 1);
 		if(tempList.indexOf(no) > 0){
 			getChance();
@@ -136,6 +151,8 @@
 		$body.animate({
 			scrollTop: $('#namelist').offset().top
 		}, 1000);
+
+		isFinish = true;
 	}
 
 	function showYesNo(){

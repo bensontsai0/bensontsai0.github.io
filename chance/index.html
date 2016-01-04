@@ -48,16 +48,16 @@
             <li><a href="choose_chance.html">求籤網</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#no1"　class="active">1~10首</a></li>
-	        <li><a href="#no11">11~20首</a></li>
-	        <li><a href="#no21">21~30首</a></li>
-	        <li><a href="#no31">31~40首</a></li>
-	        <li><a href="#no41">41~50首</a></li>
-	        <li><a href="#no51">51~60首</a></li>
-	        <li><a href="#no61">61~70首</a></li>
-	        <li><a href="#no71">71~80首</a></li>
-	        <li><a href="#no81">81~90首</a></li>
-	        <li><a href="#no91">91~100首</a></li>
+            <li><a href="#" id="#no1"　class="active">1~10首</a></li>
+	        <li><a href="#" id="#no11">11~20首</a></li>
+	        <li><a href="#" id="#no21">21~30首</a></li>
+	        <li><a href="#" id="#no31">31~40首</a></li>
+	        <li><a href="#" id="#no41">41~50首</a></li>
+	        <li><a href="#" id="#no51">51~60首</a></li>
+	        <li><a href="#" id="#no61">61~70首</a></li>
+	        <li><a href="#" id="#no71">71~80首</a></li>
+	        <li><a href="#" id="#no81">81~90首</a></li>
+	        <li><a href="#" id="#no91">91~100首</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -80,10 +80,19 @@
     <script src="../js/assets/ie10-viewport-bug-workaround.js"></script>
 
 	<script>
+  var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
 	//控制nav點擊縮放
 	$("ul.nav.navbar-nav.navbar-right li a").click(function(){
+    var id = $(this).attr('id');
+
 		$(".navbar-collapse.collapse").removeClass("in");
+    //scroll
+    $body.animate({
+      scrollTop: $(id).offset().top
+    }, 1500);
+
 	});
+
 	function init(){
 		for(var i = 0; i < chanceList.length; i++){
 			$('#chance').append('<p class="lead" id="no'+ (i+1) +'" >' + chanceList[i] + '</p>');
