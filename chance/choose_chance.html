@@ -5,8 +5,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="恩主公,百首,籤詩,百首籤詩,恩主公籤詩,求籤">
+    <meta name="author" content="Benson">
     <!-- <link rel="icon" href="../../favicon.ico"> -->
 
 	<title>恩主公百首籤詩求籤網</title>
@@ -32,25 +32,9 @@
 	
 </head>
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-        　<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">恩主公百首籤詩</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">首頁</a></li>
-            <li><a href="choose_chance.html">求籤網</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+	<header id="header">
+        <!-- pageHeader.html -->
+    </header>
     <div class="container">
 	  	<div class="starter-template">
 	  		<p>
@@ -64,29 +48,27 @@
 		    
 			<div class="row">
 				<br>
-				<div class="col-xs-2"></div>
-				<div class="col-xs-2"><button id="add" type="button" class="btn btn-lg btn-success" onclick="add()">新增信徒</button></div>
-				<div class="col-xs-2"><button id="start" type="button" class="btn btn-lg btn-primary" onclick="getChance()">求籤</button></div>
-				<div class="col-xs-2"><button id="end"type="button" class="btn btn-lg btn-danger" onclick="finish()" style="display:none">看籤詩</button></div>
-				<div class="col-xs-2"><button id="clean"type="button" class="btn btn-lg btn-warning" onclick="clean()" style="display:none">清空</button></div>
-				<div class="col-xs-2"></div> 
+				<div class="col-xs-3"><button id="add" type="button" class="btn btn-all btn-success" onclick="add()">新增信徒</button></div>
+				<div class="col-xs-3"><button id="start" type="button" class="btn btn-all btn-primary" onclick="getChance()">求籤</button></div>
+				<div class="col-xs-3"><button id="end"type="button" class="btn btn-all btn-danger" onclick="finish()" style="display:none">看籤詩</button></div>
+				<div class="col-xs-3"><button id="clean"type="button" class="btn btn-all btn-warning" onclick="clean()" style="display:none">清空</button></div>
 			</div>
 
 			<br>
 			<br>
-			<ul class="nav nav-pills" id="namelist" role="tablist">
+			<!-- <ul class="nav nav-pills" id="namelist" role="tablist">
 		        <li role="presentation" class="active"><a href="#">Home</a></li>
 		        <li role="presentation"><a href="#">Profile</a></li>
 		        <li role="presentation"><a href="#">Messages</a></li>
-		    </ul>
+		    </ul> -->
 			
 			<div id="answer"></div>
 	   	</div>
 	</div>
 	
 	<footer id="footer">
-		<!-- include pageFooter.html -->
-	</footer>
+    	<!-- pageFooter.html -->
+  	</footer>
 
 	<!-- Bootstrap core JavaScript
     ================================================== -->
@@ -97,7 +79,7 @@
     <script src="../js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../js/assets/ie10-viewport-bug-workaround.js"></script>
-
+	<script src="js/global.js"></script>
 	<script>
 	var isFinish = false;
 	//控制nav點擊縮放
