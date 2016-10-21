@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="恩主公,百首,籤詩,百首籤詩,恩主公籤詩">
+    <meta name="description" content="AzuroRepublic">
     <meta name="author" content="Benson">
     <!-- <link rel="icon" href="../../favicon.ico"> -->
 
-	<title>恩主公百首籤詩</title>
-	<script src="js/chancelist.js"></script>
-	 <!-- Bootstrap core CSS -->
+    <title>AzuroRepublic</title>
+     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -31,21 +30,22 @@
     <![endif]-->
 </head>
 <body>
-	<header id="header">
+    <header id="header">
         <!-- pageHeader.html -->
     </header>
 
-	<div class="container">
-	  	<div class="starter-template">
-	        <h1>恩主公百首籤詩</h1>
-	        <div id="chance"></div>
-	    </div>
-	</div>
+    <div class="container">
+        <div class="starter-template">
+            <h1>AzuroRepublic</h1>
+            <div id="chance"></div>
+        </div>
+    </div>
+    
 
     <footer id="footer">
         <!-- pageFooter.html -->
     </footer>
-	<!-- Bootstrap core JavaScript
+    <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
@@ -56,27 +56,7 @@
     <script src="../js/assets/ie10-viewport-bug-workaround.js"></script>
     <script src="../js/global.js"></script>
 
-	<script>
-  var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
-	//控制nav點擊縮放
-	$("ul.dropdown-menu li a").click(function(){
-    var id = $(this).attr('id');
-
-		$(".navbar-collapse.collapse").removeClass("in");
-    //scroll
-    $body.animate({
-      scrollTop: $(id).offset().top
-    }, 1500);
-
-	});
-
-	function init(){
-		for(var i = 0; i < chanceList.length; i++){
-			$('#chance').append('<p class="lead" id="no'+ (i+1) +'" >' + chanceList[i] + '</p>');
-		}
-	}
-	
-	init();
-	</script>
+    <script>
+    </script>
 </body>
 </html>
