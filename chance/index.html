@@ -60,14 +60,12 @@
   var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
 	//控制nav點擊縮放
 	$("ul.dropdown-menu li a").click(function(){
-    var id = $(this).attr('id');
-
+        var id = $(this).attr('id');
 		$(".navbar-collapse.collapse").removeClass("in");
-    //scroll
-    $body.animate({
-      scrollTop: $(id).offset().top
-    }, 1500);
-
+        //scroll
+        $body.animate({
+          scrollTop: $(id).offset().top
+        }, 1500);
 	});
 
 	function init(){
