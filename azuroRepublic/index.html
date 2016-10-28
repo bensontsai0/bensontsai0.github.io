@@ -37,7 +37,17 @@
     <div class="container">
         <div class="starter-template">
             <h1>AzuroRepublic</h1>
-            <div id="chance"></div>
+            
+            <div class="row">
+                <input type="text" class="form-control" placeholder="please key in your media url">
+                <div><button type="button" class="btn btn btn-success" onclick="init()" >Token</button></div>
+                
+                <div><button type="button" class="btn btn btn-success" onclick="getUserInfo()" >User</button></div>
+                <div><button type="button" class="btn btn btn-success" onclick="getMediaID()" >Media</button></div>
+                
+            </div>
+            
+            
         </div>
     </div>
     
@@ -57,6 +67,105 @@
     <script src="../js/global.js"></script>
 
     <script>
+        function getUrlVars(){
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('#') + 1).split('&');
+            for(var i = 0; i < hashes.length; i++)
+            {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+        var client_id = 'de403fc202e44c6cb643e1d19d1688c1';
+        var redirect_uri = 'http://localhost:8081/bensontsai0.github.io/azuroRepublic/index.html';
+        var response_type = 'token';
+        var token = '3878081544.de403fc.22dfea78165b4e0ca0672e66b46a4341';
+        //getUrlVars()["access_token"];
+        console.log(token);
+        var userid = '';
+        var username = '';
+        var profile_picture = '';
+        var mediaShortcode = $('#mediaShortcode').val();
+        var mediaID = '';
+        var mediaComment = 0;
+        var mediaLike = 0;
+        function init(){
+            if(token === undefined){
+                window.location = "https://api.instagram.com/oauth/authorize/?client_id=" + client_id + "&redirect_uri=" + redirect_uri + "&response_type=token";
+            }
+            
+            // mediaShortcode
+        }
+        
+        function getUserInfo(){
+            $.ajax({
+                url: 'https://api.instagram.com/v1/users/self/',
+                dataType: 'jsonp',
+                type: 'POST',
+                data: {access_token: token},
+                success: function(data){
+                    if(data.meta == 200)
+                    userid = data.data.id;
+                    username = data.data.username;
+                    profile_picture = data.data.profile_picture;
+                    website = data.data.website;
+                    console.log(userid);
+                    console.log(username);
+                    console.log(profile_picture);
+                },
+                error: function(data){
+                    console.log(data); // send the error notifications to console
+                }
+            });
+        }
+
+        function getMediaID(){
+            mediaShortcode = $('#mediaShortcode').val();
+            $.ajax({
+                url: 'https://api.instagram.com/v1/media/shortcode/' + mediaShortcode,
+                dataType: 'jsonp',
+                type: 'POST',
+                data: {access_token: token},
+                success: function(data){
+                    mediaID = data.data.id;
+                    mediaComment = data.data.comments.count;
+                    mediaLike = data.data.likes.count;
+                    console.log(data.data.tags);
+                    console.log(mediaID);
+                    console.log(mediaComment);
+                    console.log(mediaLike);
+                    getCommentInfo();
+                },
+                error: function(data){
+                    console.log(data); // send the error notifications to console
+                }
+            });
+        }
+
+        function getCommentInfo(){
+            $.ajax({
+                url: 'https://api.instagram.com/v1/media/' + mediaID + '/comments',
+                dataType: 'jsonp',
+                type: 'GET',
+                data: {access_token: token},
+                success: function(data){
+                     console.log(data.data);
+                     console.log(data.meta);
+                    $.each(data.data, function() {
+                        $.each(this, function(k, v) {
+                            console.log(k+ '  ' +v);
+                        });
+                    });
+                    
+                },
+                error: function(data){
+                    console.log(data); // send the error notifications to console
+                }
+            });
+        }
+        
     </script>
 </body>
 </html>
