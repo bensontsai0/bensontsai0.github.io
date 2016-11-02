@@ -214,10 +214,10 @@
         
         function sendTeleMsg(){
             $.ajax({
-                url: 'https://api.telegram.org/bot' + telToken + '/sendMessage?chat_id=-161423892&text=Fuck',
+                url: 'https://api.telegram.org/bot' + telToken + '/sendMessage',
                 dataType: 'jsonp',
                 type: 'GET',
-                data: {access_token: token},
+                data: {chat_id: -161423892, text: 'Fuck'},
                 success: function(data){
                      console.log(data);
                 },
