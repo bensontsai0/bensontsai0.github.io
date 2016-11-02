@@ -166,6 +166,23 @@
             });
         }
         
+        var teleToken = '277329734:AAEof6CiF5bEGYQI_frjqhwEwC33Z1-WA5g';
+        function getTelegramUser(){
+            $.ajax({
+                url: 'https://api.telegram.org/bot' + telToken + '/getMe',
+                dataType: 'jsonp',
+                type: 'GET',
+                data: {access_token: token},
+                success: function(data){
+                     console.log(data);
+                },
+                error: function(data){
+                    console.log(data); // send the error notifications to console
+                }
+            });
+        }
+        
+        
     </script>
 </body>
 </html>
