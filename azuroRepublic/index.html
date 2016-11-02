@@ -217,7 +217,7 @@
                 url: 'https://api.telegram.org/bot' + teleToken + '/sendMessage',
                 dataType: 'jsonp',
                 type: 'GET',
-                data: {chat_id: -161423892, text: 'Hi'},
+                data: {disable_web_page_preview: ture, chat_id: -161423892, text: 'Hi'},
                 success: function(data){
                      //console.log(data);
                     sendTeleMsg();
