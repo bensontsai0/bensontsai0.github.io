@@ -54,26 +54,15 @@
     <script src="../js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../js/assets/ie10-viewport-bug-workaround.js"></script>
-    <script src="../js/global.js"></script>
+    <script src="js/global.js"></script>
 
 	<script>
-  var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
-	//控制nav點擊縮放
-	$("ul.dropdown-menu li a").click(function(){
-        var id = $(this).attr('id');
-		$(".navbar-collapse.collapse").removeClass("in");
-        //scroll
-        $body.animate({
-          scrollTop: $(id).offset().top
-        }, 1500);
-	});
-
 	function init(){
 		for(var i = 0; i < chanceList.length; i++){
 			$('#chance').append('<p class="lead" id="no'+ (i+1) +'" >' + chanceList[i] + '</p>');
 		}
 	}
-	
+
 	init();
 	</script>
 </body>
