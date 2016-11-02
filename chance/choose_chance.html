@@ -42,25 +42,26 @@
 				<div class="chance">號籤</div>
 			</p>
 			<div class="row">
-		        <div class="col-xs-6"><button id="yes" type="button" class="btn btn-all btn-success" onclick="saveChance()" style="display:none">是</button></div>
-		        <div class="col-xs-6"><button id="no"  type="button" class="btn btn-all btn-danger" onclick="cleanChance()" style="display:none">否</button></div>
+		        <div class="col-xs-5"><button id="yes" type="button" class="btn btn-all btn-success" onclick="saveChance()" style="display:none">是</button></div>
+		        <div class="col-xs-2"></div>
+		        <div class="col-xs-5"><button id="no"  type="button" class="btn btn-all btn-danger" onclick="cleanChance()" style="display:none">否</button></div>
 		    </div>
 		    
 			<div class="row">
 				<br>
-				<div class="col-xs-3"><button id="add" type="button" class="btn btn-all btn-success" onclick="add()">新增信徒</button></div>
-				<div class="col-xs-3"><button id="start" type="button" class="btn btn-all btn-primary" onclick="getChance()">求籤</button></div>
-				<div class="col-xs-3"><button id="end"type="button" class="btn btn-all btn-danger" onclick="finish()" style="display:none">看籤詩</button></div>
-				<div class="col-xs-3"><button id="clean"type="button" class="btn btn-all btn-warning" onclick="clean()" style="display:none">清空</button></div>
+				<div class="col-xs-4"><button id="start" type="button" class="btn btn-all btn-primary" onclick="getChance()">求籤</button></div>
+				<div class="col-xs-4"><button id="end"type="button" class="btn btn-all btn-danger" onclick="finish()" style="display:none">看籤詩</button></div>
+				<div class="col-xs-4"><button id="clean"type="button" class="btn btn-all btn-warning" onclick="clean()" style="display:none">清空</button></div>
 			</div>
-
+			<div class="row">
+				<br>
+				<div class="col-xs-12"><button id="add" type="button" class="btn btn-all btn-success" onclick="add()">新增信徒</button></div>
+			</div>
 			<br>
 			<br>
-			<!-- <ul class="nav nav-pills" id="namelist" role="tablist">
-		        <li role="presentation" class="active"><a href="#">Home</a></li>
-		        <li role="presentation"><a href="#">Profile</a></li>
-		        <li role="presentation"><a href="#">Messages</a></li>
-		    </ul> -->
+			<ul class="nav nav-pills" id="namelist" role="tablist">
+		        <li role="presentation" class="active"><a href="#">信徒</a></li>
+		    </ul>
 			
 			<div id="answer"></div>
 	   	</div>
@@ -130,7 +131,7 @@
 
 	function finish(){
 		$('#number').text('');
-		$('#namelist').append('<li role="presentation" class="active"><a href="#">信徒1</a></li>');
+		//$('#namelist').append('<li role="presentation" class="active"><a href="#">信徒1</a></li>');
 		for(var i = 0; i < chooseList.length; i++){
 			$('#answer').append('<p class="lead" >' + chanceList[chooseList[i]-1] + '</p>');
 			console.log(i);
