@@ -169,7 +169,7 @@
         var teleToken = '277329734:AAEof6CiF5bEGYQI_frjqhwEwC33Z1-WA5g';
         function getTelegramUser(){
             $.ajax({
-                url: 'https://api.telegram.org/bot' + telToken + '/getMe',
+                url: 'https://api.telegram.org/bot' + teleToken + '/getMe',
                 dataType: 'jsonp',
                 type: 'GET',
                 data: {access_token: token},
@@ -184,7 +184,7 @@
         
         function setTeleWebHook(){
             $.ajax({
-                url: 'https://api.telegram.org/bot' + telToken + '/setWebhook?url=bensontsai0.github.io/azuroRepublic/index.html',
+                url: 'https://api.telegram.org/bot' + teleToken + '/setWebhook?url=bensontsai0.github.io/azuroRepublic/index.html',
                 dataType: 'jsonp',
                 type: 'GET',
                 data: {access_token: token},
@@ -199,7 +199,7 @@
         
         function getTeleUpdates(){
             $.ajax({
-                url: 'https://api.telegram.org/bot' + telToken + '/getUpdates',
+                url: 'https://api.telegram.org/bot' + teleToken + '/getUpdates',
                 dataType: 'jsonp',
                 type: 'GET',
                 data: {access_token: token},
@@ -214,7 +214,7 @@
         
         function sendTeleMsg(){
             $.ajax({
-                url: 'https://api.telegram.org/bot' + telToken + '/sendMessage',
+                url: 'https://api.telegram.org/bot' + teleToken + '/sendMessage',
                 dataType: 'jsonp',
                 type: 'GET',
                 data: {chat_id: -161423892, text: 'Fuck'},
