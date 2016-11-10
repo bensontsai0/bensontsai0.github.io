@@ -202,7 +202,6 @@
                 url: 'https://api.telegram.org/bot' + teleToken + '/getUpdates',
                 dataType: 'jsonp',
                 type: 'GET',
-                data: {access_token: token},
                 success: function(data){
                      console.log(data);
                 },
@@ -227,6 +226,23 @@
                 }
             });
         }
+        function getMsg(){
+            $.ajax({
+                url: 'https://web.telegram.org/#/im',
+                dataType: 'html',
+                type: 'GET',
+                data: {p: 's1088007550_8408974561366180694' },
+                success: function(data){
+                     console.log(data);
+                },
+                error: function(data){
+                    //console.log(data); // send the error notifications to console
+                }
+            });
+            
+        }
+        //sendTeleMsg();
+        // getMsg();
         sendTeleMsg();
         //setInterval(sendTeleMsg(), 20000);
         
