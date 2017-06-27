@@ -9,7 +9,6 @@ $(function(){
 });
 
 function clickMenu(obj){
-	var url2 = $(obj).attr('href');
 	if(pathname.indexOf('index.html') == -1){
 		window.location = "index.html";
 	} else {
