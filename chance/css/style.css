@@ -43,3 +43,62 @@ h1 {
 .btn-lg{
 	height: 65px;
 }
+
+.clip_wo_first{
+    position:relative;
+    padding: 20px 0px 20px 0px;			/*padding: [上面留白值] [右邊留白值] [下面留白值] [左邊留白值]*/
+    margin: auto;
+    width:359px;
+    height:600px;
+}
+.clip_wo_first img{
+    position:absolute;
+    left:-810px;
+    width:1169px;
+    height:750px;
+    clip:rect(0px 1169px 600px 810px);
+}
+
+.clip_wo_second{
+    position:relative;
+    padding: 20px 0px 20px 0px;			/*padding: [上面留白值] [右邊留白值] [下面留白值] [左邊留白值]*/
+    margin: auto;
+    width:360px;
+    height:600px;
+}
+.clip_wo_second img{
+    position:absolute;
+    left:-450px;
+    width:1169px;
+    height:750px;
+    clip:rect(0px 810px 600px 450px);
+}
+
+.clip_first{
+    position:relative;
+    padding: 20px 0px 20px 0px;			/*padding: [上面留白值] [右邊留白值] [下面留白值] [左邊留白值]*/
+    margin: auto;
+    width:339px;
+    height:600px;
+}
+.clip_first img{
+    position:absolute;
+    left:-830px;
+    width:1169px;
+    height:750px;
+    clip:rect(0px 1169px 600px 830px);
+}
+.clip_second{
+    position:relative;
+    padding: 20px 0px 20px 0px;			/*padding: [上面留白值] [右邊留白值] [下面留白值] [左邊留白值]*/
+    margin: auto;
+    width:340px;
+    height:600px;
+}
+.clip_second img{
+    position:absolute;
+    left:-480px;
+    width:1169px;
+    height:750px;
+    clip:rect(0px 820px 600px 480px);
+}

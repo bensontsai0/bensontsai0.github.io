@@ -36,7 +36,7 @@
 
 	<div class="container">
 	  	<div class="starter-template">
-	        <h1>恩主公男科藥籤</h1>
+	        <h1>恩主公女科藥籤</h1>
 	        <div id="chance"></div>
 	    </div>
 	</div>
@@ -58,9 +58,8 @@
 	<script>
 	function init(){
 		for(var i = 0; i < 34; i++){
-			$('#chance').append('<p class="clip_first" id="no'+ (i+1) +'" ><img src="img/man'+ (i+1) +'.jpg" ></p>');
-			//$('#chance').append('<p class="clip_second" id="no'+ (i+1) +'" ><img class="clip_second" src="img/man'+ (i+1) +'.jpg" ></p>');
-			//$('#chance').append('<p class="lead" id="no'+ (i+1) +'" ><img class="clip_third" src="img/man'+ (i+1) +'.jpg" ></p>');
+			$('#chance').append('<p class="clip_wo_first" id="no'+ (i+1) +'" ><img src="img/woman'+ (i+1) +'.jpg" ></p>');
+            $('#chance').append('<p class="clip_wo_second" id="no'+ (i+1) +'" ><img src="img/woman'+ (i+1) +'.jpg" ></p>');
 		}
 	}
 
