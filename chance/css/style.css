@@ -50,6 +50,7 @@ h1 {
     width:350px;
     height:600px;
     border:1px solid #ccc;
+    overflow:hidden;
 }
 .clip_wo_first img{
     position:absolute;
@@ -65,6 +66,7 @@ h1 {
     width:350px;
     height:600px;
     border:1px solid #ccc;
+    overflow:hidden;
 }
 .clip_wo_second img{
     position:absolute;
@@ -80,6 +82,7 @@ h1 {
     width:340px;
     height:600px;
     border:1px solid #ccc;
+    overflow:hidden;
 }
 .clip_wo_third img{
     position:absolute;
@@ -91,4 +94,9 @@ h1 {
 
 .clip_first{
     padding: 60px 0px 30px 0px;			/*padding: [上面留白值] [右邊留白值] [下面留白值] [左邊留白值]*/
+}
+
+.clip_first img{
+	width: 288px;
+    height: 617px;
 }
