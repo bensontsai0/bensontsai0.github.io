@@ -9,7 +9,7 @@
     <meta name="author" content="Benson">
     <!-- <link rel="icon" href="../../favicon.ico"> -->
 
-	<title>恩主公男科藥籤</title>
+	<title>恩主公女科藥籤</title>
 	 <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
@@ -58,8 +58,12 @@
 	<script>
 	function init(){
 		for(var i = 0; i < 34; i++){
-			$('#chance').append('<p class="clip_wo_first" id="no'+ (i+1) +'" ><img src="img/woman'+ (i+1) +'.jpg" ></p>');
-            $('#chance').append('<p class="clip_wo_second" id="no'+ (i+1) +'" ><img src="img/woman'+ (i+1) +'.jpg" ></p>');
+			$('#chance').append('<br><p class="clip_wo_first" id="no'+ (i+1) +'" ><img src="img/woman'+ (i+1) +'.jpg" ></p><br>');
+            if(i != 33){
+                $('#chance').append('<br><p class="clip_wo_second" id="no'+ (i+1) +'" ><img src="img/woman'+ (i+1) +'.jpg" ></p><br>');
+                $('#chance').append('<br><p class="clip_wo_third" id="no'+ (i+1) +'" ><img src="img/woman'+ (i+1) +'.jpg" ></p><br>');
+            }
+           
 		}
 	}
 

@@ -46,59 +46,49 @@ h1 {
 
 .clip_wo_first{
     position:relative;
-    padding: 20px 0px 20px 0px;			/*padding: [上面留白值] [右邊留白值] [下面留白值] [左邊留白值]*/
     margin: auto;
-    width:359px;
+    width:350px;
     height:600px;
+    border:1px solid #ccc;
 }
 .clip_wo_first img{
     position:absolute;
     left:-810px;
     width:1169px;
     height:750px;
-    clip:rect(0px 1169px 600px 810px);
+    clip:rect(0px 1160px 600px 810px);
 }
 
 .clip_wo_second{
     position:relative;
-    padding: 20px 0px 20px 0px;			/*padding: [上面留白值] [右邊留白值] [下面留白值] [左邊留白值]*/
     margin: auto;
-    width:360px;
+    width:350px;
     height:600px;
+    border:1px solid #ccc;
 }
 .clip_wo_second img{
     position:absolute;
-    left:-450px;
+    left:-460px;
     width:1169px;
     height:750px;
-    clip:rect(0px 810px 600px 450px);
+    clip:rect(0px 810px 600px 460px);
 }
 
-.clip_first{
+.clip_wo_third{
     position:relative;
-    padding: 20px 0px 20px 0px;			/*padding: [上面留白值] [右邊留白值] [下面留白值] [左邊留白值]*/
-    margin: auto;
-    width:339px;
-    height:600px;
-}
-.clip_first img{
-    position:absolute;
-    left:-830px;
-    width:1169px;
-    height:750px;
-    clip:rect(0px 1169px 600px 830px);
-}
-.clip_second{
-    position:relative;
-    padding: 20px 0px 20px 0px;			/*padding: [上面留白值] [右邊留白值] [下面留白值] [左邊留白值]*/
     margin: auto;
     width:340px;
     height:600px;
+    border:1px solid #ccc;
 }
-.clip_second img{
+.clip_wo_third img{
     position:absolute;
-    left:-480px;
+    left:-110px;
     width:1169px;
     height:750px;
-    clip:rect(0px 820px 600px 480px);
+    clip:rect(0px 450px 600px 110px);
+}
+
+.clip_first{
+    padding: 60px 0px 30px 0px;			/*padding: [上面留白值] [右邊留白值] [下面留白值] [左邊留白值]*/
 }
