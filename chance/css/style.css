@@ -48,7 +48,7 @@ h1 {
     position:relative;
     margin: auto;
     width:350px;
-    height:600px;
+    height:550px;
     border:1px solid #ccc;
     overflow:hidden;
 }
@@ -64,7 +64,7 @@ h1 {
     position:relative;
     margin: auto;
     width:350px;
-    height:600px;
+    height:550px;
     border:1px solid #ccc;
     overflow:hidden;
 }
@@ -80,7 +80,7 @@ h1 {
     position:relative;
     margin: auto;
     width:340px;
-    height:600px;
+    height:550px;
     border:1px solid #ccc;
     overflow:hidden;
 }
@@ -98,5 +98,5 @@ h1 {
 
 .clip_first img{
 	width: 288px;
-    height: 617px;
+    height: 550px;
 }

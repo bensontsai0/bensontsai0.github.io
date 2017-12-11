@@ -50,13 +50,15 @@
 			<div class="row">
 				<br>
 				<div class="col-xs-4"><button id="start" type="button" class="btn btn-all btn-primary" onclick="getChance()">求籤</button></div>
-				<div class="col-xs-4"><button id="end"type="button" class="btn btn-all btn-danger" onclick="finish()" style="display:none">看籤詩</button></div>
-				<div class="col-xs-4"><button id="clean"type="button" class="btn btn-all btn-warning" onclick="clean()" style="display:none">清空</button></div>
+				<div class="col-xs-4"><button id="end" type="button" class="btn btn-all btn-danger" onclick="finish()" style="display:none">看籤詩</button></div>
+				<div class="col-xs-4"><button id="clean" type="button" class="btn btn-all btn-warning" onclick="clean()" style="display:none">清空</button></div>
 			</div>
 			<br>
 			<br>
 			<ul class="nav nav-pills" id="namelist" role="tablist">
-		        <li role="presentation" class="active"><a href="#">信徒</a></li>
+		        <li role="presentation" class="active"><div onclick="changeType(1)">靈籤</div></li>
+		        <li role="presentation" class="active"><div onclick="changeType(2)">男科藥籤</div></li>
+		        <li role="presentation" class="active"><div onclick="changeType(3)">女科藥籤</div></li>
 		    </ul>
 			
 			<div id="answer"></div>
@@ -79,6 +81,7 @@
 	<script src="js/global.js"></script>
 	<script>
 	var isFinish = false;
+	var type = 1;
 	//控制nav點擊縮放
 	$("ul.nav.navbar-nav.navbar-right li a").click(function(){
 		$(".navbar-collapse.collapse").removeClass("in");
@@ -163,6 +166,10 @@
 
 	function add(){
 
+	}
+
+	function changeType(chanceType){
+		type = chanceType;
 	}
 	</script>
 </body>
