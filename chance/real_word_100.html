@@ -9,8 +9,7 @@
     <meta name="author" content="Benson">
     <!-- <link rel="icon" href="../../favicon.ico"> -->
 
-	<title>北斗延壽妙經</title>
-	<script src="js/chancelist.js"></script>
+	<title>一字真百首藥籤</title>
 	 <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
@@ -36,11 +35,9 @@
     </header>
 
 	<div class="container">
-	  	<div class="page-header">
-	        <h1>北斗延壽妙經</h1>
-	        <div class="lead">
-               
-            </div>
+	  	<div class="starter-template">
+	        <h1>一字真百首藥籤</h1>
+	        <div id="chance"></div>
 	    </div>
 	</div>
 
@@ -57,5 +54,15 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../js/assets/ie10-viewport-bug-workaround.js"></script>
     <script src="js/global.js"></script>
+
+	<script>
+	function init(){
+		for(var i = 0; i < 36; i++){
+			$('#chance').append('<p class="clip_first" id="no'+ (i+1) +'" ><img src="img/real'+ (i+1) +'.jpg" ></p>');
+		}
+	}
+
+	init();
+	</script>
 </body>
 </html>
