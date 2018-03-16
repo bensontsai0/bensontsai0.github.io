@@ -99,7 +99,7 @@
 	function getChance(){
 
 		no = Math.floor((Math.random() * 100) + 1);
-		if(tempList.indexOf(no) > 0){
+		if(tempList.indexOf(no) > -1){
 			getChance();
 			return;
 		} else {
