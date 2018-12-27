@@ -38,11 +38,15 @@
     <div class="container">
 	  	<div class="starter-template">
 	  		<div class="row">
-		        <div class="col-xs-8"><input id="number" type="text" class="form-control" placeholder="請輸入籤詩號碼(用空白隔開)  範例: 1 3 4 6" aria-label="請輸入籤詩號碼(用空白隔開)  範例: 1 3 4 6" aria-describedby="basic-addon2"></div>
-		        <div class="col-xs-2"><button class="btn btn-danger" onclick="finish()" type="button">看籤詩</button></div>
-		        <div class="col-xs-2"><button class="btn btn-danger" onclick="cleanChance()" type="button">清除</button></div>
+		        <div class="col-xs-12 input-group-lg "><input id="number" type="text" class="form-control" placeholder="請輸入籤詩號碼(用空白隔開)  範例: 1 3 4 6" aria-label="請輸入籤詩號碼(用空白隔開)  範例: 1 3 4 6" aria-describedby="basic-addon2"></div>
 		    </div>
-			<br>
+		    <br>
+		    <br>
+		    <div class="row">
+		        <div class="col-xs-5"><button id="yes" type="button" class="btn btn-all btn-success" onclick="finish()">看籤詩</button></div>
+		        <div class="col-xs-2"></div>
+		        <div class="col-xs-5"><button id="no"  type="button" class="btn btn-all btn-danger" onclick="cleanChance()">清除</button></div>
+		    </div>
 			<br>
 			<ul class="nav nav-pills" id="namelist" role="tablist">
 		        <li role="presentation" class="active"><div onclick="changeType(1)">靈籤</div></li>
