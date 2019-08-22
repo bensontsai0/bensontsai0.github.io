@@ -51,7 +51,9 @@
 				<br>
 				<div class="col-xs-4"><button id="start" type="button" class="btn btn-all btn-primary" onclick="getChance()">求籤</button></div>
 				<div class="col-xs-4"><button id="end" type="button" class="btn btn-all btn-danger" onclick="finish()" style="display:none">看籤詩</button></div>
-				<div class="col-xs-4"><button id="add" type="button" class="btn btn-all btn-warning" onclick="add()" style="display:none">新增信徒</button></div>
+				<div class="col-xs-4">
+					<!-- <button id="add" type="button" class="btn btn-all btn-warning" onclick="add()" style="display:none">新增信徒</button> -->
+				</div>
 			</div>
 			<br>
 			<br>
@@ -93,18 +95,18 @@
 
 	var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
 	var	chooseList = new Array();
-	var	tempList = new Array();
+	// var	tempList = new Array();
 	var no = 0;
 	
 	function getChance(){
 
 		no = Math.floor((Math.random() * 100) + 1);
-		if(tempList.indexOf(no) > -1){
+		if(chooseList.indexOf(no) > -1){
 			getChance();
 			return;
 		} else {
 			$('#number').text(no);
-			tempList.push(no);
+			// tempList.push(no);
 			showYesNo();
 		}
 		hideEventBtn();
