@@ -51,18 +51,10 @@
 				<br>
 				<div class="col-xs-4"><button id="start" type="button" class="btn btn-all btn-primary" onclick="getChance()">求籤</button></div>
 				<div class="col-xs-4"><button id="end" type="button" class="btn btn-all btn-danger" onclick="finish()" style="display:none">看籤詩</button></div>
-				<div class="col-xs-4">
-					<!-- <button id="add" type="button" class="btn btn-all btn-warning" onclick="add()" style="display:none">新增信徒</button> -->
-				</div>
+				<div class="col-xs-4"></div>
 			</div>
 			<br>
 			<br>
-			<ul class="nav nav-pills" id="namelist" role="tablist">
-		        <li role="presentation" class="active"><div onclick="changeType(1)">靈籤</div></li>
-		        <li role="presentation" class="active"><div onclick="changeType(2)">男科藥籤</div></li>
-		        <li role="presentation" class="active"><div onclick="changeType(3)">女科藥籤</div></li>
-		    </ul>
-			
 			<div id="answer"></div>
 	   	</div>
 	</div>
@@ -139,8 +131,6 @@
 		$body.animate({
 			scrollTop: $('#namelist').offset().top
 		}, 1000);
-
-		$('#add').show();
 	}
 
 	function showYesNo(){
@@ -156,15 +146,6 @@
 	function hideEventBtn(){
 		$('#start').hide();
 		$('#end').hide();
-		$('#add').hide();
-	}
-
-	function add(){
-		window.open("http://bensontsai0.github.io/chance/choose_chance.html");
-	}
-
-	function changeType(chanceType){
-		type = chanceType;
 	}
 	</script>
 </body>
