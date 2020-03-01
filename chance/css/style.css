@@ -44,59 +44,20 @@ h1 {
 	height: 65px;
 }
 
-.clip_wo_first{
-    position:relative;
-    margin: auto;
-    width:350px;
-    height:550px;
-    border:1px solid #ccc;
-    overflow:hidden;
-}
-.clip_wo_first img{
-    position:absolute;
-    left:-810px;
-    width:1169px;
-    height:750px;
-    clip:rect(0px 1160px 600px 810px);
-}
-
-.clip_wo_second{
-    position:relative;
-    margin: auto;
-    width:350px;
-    height:550px;
-    border:1px solid #ccc;
-    overflow:hidden;
-}
-.clip_wo_second img{
-    position:absolute;
-    left:-460px;
-    width:1169px;
-    height:750px;
-    clip:rect(0px 810px 600px 460px);
-}
-
-.clip_wo_third{
-    position:relative;
-    margin: auto;
-    width:340px;
-    height:550px;
-    border:1px solid #ccc;
-    overflow:hidden;
-}
-.clip_wo_third img{
-    position:absolute;
-    left:-110px;
-    width:1169px;
-    height:750px;
-    clip:rect(0px 450px 600px 110px);
-}
-
 .clip_first{
     padding: 60px 0px 30px 0px;			/*padding: [上面留白值] [右邊留白值] [下面留白值] [左邊留白值]*/
 }
 
 .clip_first img{
 	width: 288px;
-    height: 550px;
+  height: 550px;
+}
+
+.clip_real{
+    padding: 60px 0px 30px 0px;     /*padding: [上面留白值] [右邊留白值] [下面留白值] [左邊留白值]*/
+}
+
+.clip_real img{
+  width: 135px;
+  height: 550px;
 }
