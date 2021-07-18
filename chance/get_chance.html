@@ -42,17 +42,21 @@
 		    </div>
 		    <br>
 		    <br>
+		    <label for="sel1">籤詩種類:</label>
+		  	<select class="form-control form-control-lg" id="chance">
+				<option value="" selected>靈籤</option>
+			    <option value="1">大溪普濟堂---男科</option>
+			    <option value="2">大溪普濟堂---女科</option>
+			    <option value="3">一字真---百首藥籤</option>
+			</select>
+			<br>
+		    <br>
 		    <div class="row">
 		        <div class="col-xs-5"><button id="yes" type="button" class="btn btn-all btn-success" onclick="finish()">看籤詩</button></div>
 		        <div class="col-xs-2"></div>
 		        <div class="col-xs-5"><button id="no"  type="button" class="btn btn-all btn-danger" onclick="cleanChance()">清除</button></div>
 		    </div>
 			<br>
-			<ul class="nav nav-pills" id="namelist" role="tablist">
-		        <li role="presentation" class="active"><div onclick="changeType(1)">靈籤</div></li>
-		        <li role="presentation" class="active"><div onclick="changeType(2)">男科藥籤</div></li>
-		        <li role="presentation" class="active"><div onclick="changeType(3)">女科藥籤</div></li>
-		    </ul>
 			
 			<div id="answer"></div>
 	   	</div>
@@ -86,7 +90,6 @@
 
 	var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
 	var	numList = new Array();
-	var	tempList = new Array();
 
 	function cleanChance(){
 		$('#number').val('');
@@ -94,10 +97,16 @@
 	}
 
 	function finish(){
+		var chanceID = $('#chance').val();
 		var numList = $('#number').val().split(' ');
-		for(var i = 0; i < numList.length; i++){
-			$('#answer').append('<p class="lead" >' + chanceList[numList[i]-1] + '</p>');
-			//console.log(i);
+		if(chanceID == '1'){
+			getManMedicine(numList);
+		} else if(chanceID == '2'){
+			getWomanMedicine(numList);
+		} else if(chanceID == '3'){
+			getRealMedicine(numList);
+		} else {
+			getChance(numList);
 		}
 		//move to namelist
 		$body.animate({
@@ -105,8 +114,28 @@
 		}, 1000);
 	}
 
-	function changeType(chanceType){
-		type = chanceType;
+	function getChance(list){
+		for(var i = 0; i < list.length; i++){
+			$('#answer').append('<p class="lead" >' + chanceList[list[i]-1] + '</p>');
+		}
+	}
+
+	function getManMedicine(list){
+		for(var i = 0; i < list.length; i++){
+			$('#answer').append('<p class="clip_first" id="no'+ list[i] +'" ><img src="img/man'+ list[i] +'.jpg" ></p>');
+		}
+	}
+
+	function getWomanMedicine(list){
+		for(var i = 0; i < list.length; i++){
+			$('#answer').append('<p class="clip_first" id="no'+ list[i] +'" ><img src="img/woman'+ list[i] +'.jpg" ></p>');
+		}
+	}
+
+	function getRealMedicine(list){
+		for(var i = 0; i < list.length; i++){
+			$('#answer').append('<p class="clip_real" id="no'+ list[i] +'" ><img src="img/real'+ list[i] +'.jpg" ></p>');
+		}
 	}
 	</script>
 </body>
