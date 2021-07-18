@@ -17,6 +17,8 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../css/assets/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
+    <link href="../css/bootstrap-dialog.min.css" rel="stylesheet">
+
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
 
@@ -39,8 +41,18 @@
 	  	<div class="starter-template">
 	  		<p>
 		        <div id="number" class="chance-number"></div>
-				<div class="chance">號籤</div>
+				<div class="chance">號藥籤</div>
 			</p>
+			<label for="sel1">藥籤種類:</label>
+		  	<select class="form-control form-control-lg" id="medicine">
+				<option value="" selected>請選擇藥籤種類</option>
+			    <option value="1">大溪普濟堂---男科</option>
+			    <option value="2">大溪普濟堂---女科</option>
+			    <option value="3">一字真---百首藥籤</option>
+			</select>
+
+			<br>
+
 			<div class="row">
 		        <div class="col-xs-5">
 		        	<button id="yes" type="button" class="btn btn-all btn-success" onclick="saveChance()" style="display:none">是</button>
@@ -78,12 +90,12 @@
     <script src="../js/jquery-1.11.3.min.js"></script>
     <!-- <script>window.jQuery || document.write('<script src="../js/jquery-1.11.3.min.js"><\/script>')</script> -->
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap-dialog.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../js/assets/ie10-viewport-bug-workaround.js"></script>
 	<script src="js/global.js"></script>
 	<script>
 	var isFinish = false;
-	var type = 1;
 	//控制nav點擊縮放
 	$("ul.nav.navbar-nav.navbar-right li a").click(function(){
 		$(".navbar-collapse.collapse").removeClass("in");
@@ -128,17 +140,48 @@
 	}
 
 	function finish(){
-		$('#number').text('');
-		for(var i = 0; i < chooseList.length; i++){
-			$('#answer').append('<p class="lead" >' + chanceList[chooseList[i]-1] + '</p>');
-			console.log(i);
+		
+		var medicineID = $('#medicine').val();
+
+		if(medicineID == ''){
+			BootstrapDialog.alert('請輸入藥籤種類!');
+		} else {
+
+			$('#number').text('');
+			
+			if(medicineID == '1'){
+				getManMedicine();
+			} else if(medicineID == '2'){
+				getWomanMedicine();
+			} else if(medicineID == '3'){
+				getRealMedicine();
+			}
+
+			hideEventBtn();
+			hideYesNo();
+			//move to namelist
+			$body.animate({
+				scrollTop: $('#answer').offset().top
+			}, 1000);
 		}
-		hideEventBtn();
-		hideYesNo();
-		//move to namelist
-		$body.animate({
-			scrollTop: $('#answer').offset().top
-		}, 1000);
+	}
+
+	function getManMedicine(){
+		for(var i = 0; i < chooseList.length; i++){
+			$('#answer').append('<p class="clip_first" id="no'+ chooseList[i] +'" ><img src="img/man'+ chooseList[i] +'.jpg" ></p>');
+		}
+	}
+
+	function getWomanMedicine(){
+		for(var i = 0; i < chooseList.length; i++){
+			$('#answer').append('<p class="clip_first" id="no'+ chooseList[i] +'" ><img src="img/woman'+ chooseList[i] +'.jpg" ></p>');
+		}
+	}
+
+	function getRealMedicine(){
+		for(var i = 0; i < chooseList.length; i++){
+			$('#answer').append('<p class="clip_real" id="no'+ chooseList[i] +'" ><img src="img/real'+ chooseList[i] +'.jpg" ></p>');
+		}
 	}
 
 	function showYesNo(){
