@@ -6,6 +6,9 @@
 
 (function($) {
 
+	$("#header").load("pageHeader.html");
+  	$("#footer").load("pageFooter.html");
+
 	var	$window = $(window),
 		$body = $('body');
 
