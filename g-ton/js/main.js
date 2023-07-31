@@ -3,11 +3,13 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+$(function(){
+  	$("#header").load("pageHeader.html");
+  	$("#footer").load("pageFooter.html");
+});
 
 (function($) {
 
-	$("#header").load("pageHeader.html");
-  	$("#footer").load("pageFooter.html");
 
 	var	$window = $(window),
 		$body = $('body');
