@@ -12,3 +12,13 @@ body {
 .bg-dark{
 	background-color:#000000!important;
 }
+
+@media (min-width: 992px) {
+
+    .row-cols-md-8 > * {
+      -ms-flex: 0 0 12.5%;
+      flex: 0 0 12.5%;
+      max-width: 12.5%;
+    }
+
+}
