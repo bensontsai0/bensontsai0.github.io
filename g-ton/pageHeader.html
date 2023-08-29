@@ -3,26 +3,23 @@
       	<a class="navbar-brand" href="#">
       		<img src="images/logo.png" width="110" height="55" alt="logo">
       	</a>
-      	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
+      	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
         	<span class="navbar-toggler-icon"></span>
       	</button>
 
-	    <div class="collapse navbar-collapse" id="navbarsExample07XL">
+	    <div class="collapse navbar-collapse" id="navbars">
 	        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 	          <li class="nav-item px-5">
-	            <a class="nav-link active" aria-current="page" href="#">Home</a>
+	            <a class="nav-link active" id="#home" onclick="clickMenu(this)" aria-current="page" href="#home">Home</a>
 	          </li>
 	          <li class="nav-item px-5">
-	            <a class="nav-link" href="#product">Product</a>
+	            <a class="nav-link" id="#product" onclick="clickMenu(this)" href="#product">Product</a>
 	          </li>
 	          <li class="nav-item px-5">
-	            <a class="nav-link" href="#application">Application</a>
+	            <a class="nav-link" id="#application" onclick="clickMenu(this)" href="#application">Application</a>
 	          </li>
 	          <li class="nav-item px-5">
-	            <a class="nav-link" href="#About Us">About Us</a>
-	          </li>
-	          <li class="nav-item px-5">
-	            <a class="nav-link" href="#Content Us">Content Us</a>
+	            <a class="nav-link" id="#footer" onclick="clickMenu(this)" href="#footer">Content Us</a>
 	          </li>
 	        </ul>
       	</div>

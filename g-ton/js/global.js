@@ -9,20 +9,13 @@ $(function(){
 });
 
 function clickMenu(obj){
-	if(pathname.indexOf('index.html') == -1){
-		window.location = "index.html";
-	} else {
-		if(count == 0){
-			//控制nav點擊縮放
-			$("ul.nav.navbar-nav li.dropdown ul.dropdown-menu li a").click(function(){
-	            var id = $(this).attr('id');
-	            $(".navbar-collapse.collapse").removeClass("in");
-	            //scroll
-	            $body.animate({
-	              scrollTop: $(id).offset().top
-	            }, 1500);
-	        });
-	        count++;
-		}
-	}
+	//控制nav點擊縮放
+	$("div.navbar-collapse.collapse ul.nav.navbar-nav li.nav-item a").click(function(){
+        var id = $(this).attr('id');
+        //scroll
+        $body.animate({
+          scrollTop: $(id).offset().top-65
+        }, 1500);
+    });
+     $("div.navbar-collapse.collapse").removeClass('show');
 }
